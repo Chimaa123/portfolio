@@ -6,3 +6,8 @@ export interface ProjectType {
   endDate: string;
   responsibilities: string[];
 }
+
+export interface Menu {
+  label: string;
+  code: string;
+}
