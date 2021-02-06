@@ -1,8 +1,24 @@
 [
   {
     "title": "Test project",
+    "description": "cream_intro.png",
+    "photo": "/cream_intro.png",
+    "startDate": "2014-01-01",
+    "endDate": "2016-01-01",
+    "responsibilities": ["webserver"]
+  },
+  {
+    "title": "Test project",
+    "description": "cream_web_intro.png",
+    "photo": "/cream_web_intro.png",
+    "startDate": "2014-01-01",
+    "endDate": "2016-01-01",
+    "responsibilities": ["webserver"]
+  },
+  {
+    "title": "Test project",
     "description": "Test project",
-    "photo": "Test project",
+    "photo": "/cream_web_intro.png",
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]

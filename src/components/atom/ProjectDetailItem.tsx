@@ -2,17 +2,22 @@ import React from "react";
 import { ProjectType } from "../../interfaces";
 import { makeStyles } from "@material-ui/core/styles";
 import { grey21 } from "../../Theme";
-import ProjectDetailItem from "../atom/ProjectDetailItem";
-interface Props {
-  projects: ProjectType[];
-}
-function ProjectsDetail({ projects }: Props) {
+
+function ProjectDetailItem({ title, description }: ProjectType) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      {projects.map((project) => (
-        <ProjectDetailItem {...project} />
-      ))}
+      <header className="App-header">
+        <p>{title}</p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {description}
+        </a>
+      </header>
     </div>
   );
 }
@@ -23,7 +28,8 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     background: grey21,
+    height: "100vh",
   },
 });
 
-export default ProjectsDetail;
+export default ProjectDetailItem;

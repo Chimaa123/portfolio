@@ -14,12 +14,14 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router>
         <Header />
-        <Intro />
         <div id={"section0"}>
-          <ProjectsSummary projects={projects} />
+          <Intro />
         </div>
         <div id={"section1"}>
-          <ProjectsDetail />
+          <ProjectsSummary projects={projects} />
+        </div>
+        <div id={"section2"}>
+          <ProjectsDetail projects={projects} />
         </div>
       </Router>
     </ThemeProvider>

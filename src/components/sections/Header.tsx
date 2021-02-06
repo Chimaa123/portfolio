@@ -13,7 +13,7 @@ const Header = () => {
   ];
   return (
     <React.Fragment>
-      <AppBar position={'fixed'}>
+      <AppBar position={"relative"}>
         <Toolbar className={classes.root}>
           {menus.map((item, index) => (
             <Link
@@ -37,6 +37,7 @@ const useStyles = makeStyles({
   item: {
     fontSize: 15,
     fontWeight: "bold",
+    color: "white",
     textDecoration: "none",
     padding: 10,
   },
