@@ -1,7 +1,8 @@
 export interface ProjectType {
   title: string;
   description: string;
-  photo: string;
+  main_photo: string;
+  photos: string[];
   startDate: string;
   endDate: string;
   responsibilities: string[];

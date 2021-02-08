@@ -14,16 +14,16 @@ const Header = () => {
   ];
   return (
     <React.Fragment>
-      <AppBar position={"relative"}>
+      <AppBar position={"fixed"} className={classes.root}>
         <Toolbar className={classes.root}>
           {menus.map((item, index) => (
-            <Link
-              to={"/portfolio/#section" + index}
+            <a
+              href={"/#section" + index}
               key={"header" + index}
               className={classes.item}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </Toolbar>
       </AppBar>

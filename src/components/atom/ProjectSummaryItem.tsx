@@ -3,12 +3,12 @@ import { ProjectType } from "../../interfaces";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
-function ProjectSummaryItem({ title, photo }: ProjectType) {
+function ProjectSummaryItem({ title, main_photo }: ProjectType) {
   const classes = useStyles();
-  console.log("photo", photo);
+  console.log("photo", main_photo);
   return (
     <div key={title} className={classes.root}>
-      <img src={"images" + photo} className={classes.image} />
+      <img src={"images" + main_photo} className={classes.image} />
       <div className={classes.titleBar}>
         <Typography variant={"h5"} className={classes.title}>
           {title}

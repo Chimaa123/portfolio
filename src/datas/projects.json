@@ -2,7 +2,8 @@
   {
     "title": "CREAM Mobile Application",
     "description": "cream_intro.png",
-    "photo": "/cream_intro.png",
+    "main_photo": "/cream_intro.png",
+    "photos": ["/cream_intro.png", "/cream_web_intro.png", "/lendpinoy.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
@@ -10,7 +11,8 @@
   {
     "title": "CREAM Web Application",
     "description": "cream_web_intro.png",
-    "photo": "/cream_web.png",
+    "main_photo": "/cream_web.png",
+    "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
@@ -18,7 +20,8 @@
   {
     "title": "Lendpinoy Micro-lending Mobile Application",
     "description": "Test project",
-    "photo": "/lendpinoy.png",
+    "main_photo": "/lendpinoy.png",
+    "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
@@ -26,7 +29,8 @@
   {
     "title": "Electronic Voting System",
     "description": "Test project",
-    "photo": "/cream_web_intro.png",
+    "main_photo": "/cream_web_intro.png",
+    "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
@@ -34,7 +38,8 @@
   {
     "title": "Voter Registration System for South Korea",
     "description": "Test project",
-    "photo": "/cream_web_intro.png",
+    "main_photo": "/cream_web_intro.png",
+    "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
@@ -42,7 +47,8 @@
   {
     "title": "Electronic Conference System from Mongolian National Assemble",
     "description": "Test project",
-    "photo": "/cream_web_intro.png",
+    "main_photo": "/cream_web_intro.png",
+    "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
@@ -50,7 +56,8 @@
   {
     "title": "HIVAMS Vessel Asset Management System for Hyundai heavy industries",
     "description": "Test project",
-    "photo": "/cream_web_intro.png",
+    "main_photo": "/cream_web_intro.png",
+    "photos": ["/cream_intro.png", "/cream_web_intro.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]

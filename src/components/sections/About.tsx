@@ -24,16 +24,16 @@ function About() {
           />
         </div>
         <Typography variant={"h2"} className={classes.name}>
-          learn more about each
+          Gombo Enkhchimeg
         </Typography>
         <Typography variant={"h6"} className={classes.name}>
-          img elements must have an alt
+          Front End Developer
         </Typography>
       </div>
       <img
         className={classes.img}
         alt={"profile"}
-        src={"images/chimeg_profile.png"}
+        src={"images/coffee_bg.png"}
       />
     </div>
   );
@@ -56,7 +56,6 @@ const useStyles = makeStyles({
   text: {
     display: "flex",
     flexDirection: "column",
-    position: "absolute",
     width: "100vw",
   },
   name: {
@@ -65,11 +64,10 @@ const useStyles = makeStyles({
     color: greyeb,
   },
   img: {
-    marginRight: "5rem",
-    width: "60vh",
-    height: "60vh",
-    borderRadius: "40vw",
-    alignSelf: "flex-end",
+    position: "absolute",
+    width: "100vw",
+    height: "100vh",
+    objectFit: "cover",
     opacity: 0.6,
   },
 });
