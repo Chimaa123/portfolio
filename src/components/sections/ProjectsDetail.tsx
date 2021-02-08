@@ -1,7 +1,6 @@
 import React from "react";
 import { ProjectType } from "../../interfaces";
 import { makeStyles } from "@material-ui/core/styles";
-import { grey21 } from "../../Theme";
 import ProjectDetailItem from "../atom/ProjectDetailItem";
 interface Props {
   projects: ProjectType[];
@@ -22,7 +21,6 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    background: grey21,
   },
 });
 

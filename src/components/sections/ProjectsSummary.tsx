@@ -2,7 +2,6 @@ import React from "react";
 import { ProjectType } from "../../interfaces";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectSummaryItem from "../atom/ProjectSummaryItem";
-import { grey21 } from "../../Theme";
 import { GridList, Typography } from "@material-ui/core";
 interface Props {
   projects: ProjectType[];
@@ -14,7 +13,7 @@ function ProjectsSummary({ projects }: Props) {
       <Typography variant={"h2"} className={classes.title}>
         Projects
       </Typography>
-      <GridList cols={2.5} className={classes.row}>
+      <GridList className={classes.row}>
         {projects.map((project) => (
           <ProjectSummaryItem {...project} />
         ))}
@@ -28,8 +27,8 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    background: grey21,
     height: "100vh",
+    width: "100vw",
   },
   row: {
     flexWrap: "nowrap",

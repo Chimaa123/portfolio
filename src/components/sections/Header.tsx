@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AppBar, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
+export const HEADER_HEIGHT = 0;
 const Header = () => {
   const classes = useStyles();
   const menus = [
@@ -31,13 +32,14 @@ const Header = () => {
 };
 const useStyles = makeStyles({
   root: {
+    height: HEADER_HEIGHT,
     background: "transparent",
     marginLeft: "auto",
   },
   item: {
     fontSize: 15,
     fontWeight: "bold",
-    color: "white",
+    color: "#cbcbcb",
     textDecoration: "none",
     padding: 10,
   },

@@ -1,6 +1,9 @@
 import { createMuiTheme } from "@material-ui/core";
 
-export const grey21 = "#212121";
+export const grey21 = "#101010";
+export const grey32 = "#323232";
+export const greycb = "#cbcbcb";
+export const greyeb = "#ebebeb";
 export default createMuiTheme({
   palette: {
     primary: {

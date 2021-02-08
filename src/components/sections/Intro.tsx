@@ -1,16 +1,24 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
-import { grey21 } from "../../Theme";
+import { greycb } from "../../Theme";
+import Lottie from "react-lottie";
+import lotties from "../../assets/lotties";
 
 function Intro() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Typography variant={"h3"} className={classes.title}>
-        About
-      </Typography>
+      <Lottie
+        height={200}
+        width={300}
+        options={{
+          loop: true,
+          autoplay: true,
+          animationData: lotties.about,
+        }}
+      />
       <div className={classes.row}>
         <div className={classes.left}>
           <Typography variant={"subtitle1"} className={classes.about}>
@@ -41,22 +49,18 @@ function Intro() {
 
 const useStyles = makeStyles({
   root: {
-    minHeight: "100vh",
-    backgroundColor: grey21,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    padding: "5rem",
   },
   row: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
   },
-  title: {
-    color: "violet",
-  },
   about: {
-    color: "white",
+    color: greycb,
   },
   left: {
     fontSize: 15,
@@ -65,7 +69,7 @@ const useStyles = makeStyles({
     padding: 10,
   },
   right: {
-    color: "white",
+    color: greycb,
   },
 });
 

@@ -7,6 +7,13 @@ export interface ProjectType {
   responsibilities: string[];
 }
 
+export interface ContactType {
+  icon: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
 export interface Menu {
   label: string;
   code: string;

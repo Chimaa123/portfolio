@@ -24,19 +24,19 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    width: 400,
-    height: 277,
   },
   titleBar: {
     zIndex: 100,
+    position: "absolute",
   },
   title: {
     color: "white",
   },
   image: {
-    position: "absolute",
     width: 157,
     height: 277,
+    objectFit: "cover",
+    marginLeft: "15rem",
     borderRadius: 8,
   },
 });
