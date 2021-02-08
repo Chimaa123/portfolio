@@ -33,7 +33,7 @@ function About() {
       <img
         className={classes.img}
         alt={"profile"}
-        src={"images/coffee_bg.png"}
+        src={process.env.PUBLIC_URL + "/images/coffee_bg.png"}
       />
     </div>
   );

@@ -46,6 +46,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    minWidth: 320,
   },
   inner: {
     padding: "3rem",

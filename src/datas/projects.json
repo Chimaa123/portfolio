@@ -1,7 +1,8 @@
 [
   {
     "title": "CREAM Mobile Application",
-    "description": "cream_intro.png",
+    "description": "With CREAM you can request one-of-a-kind video messages created just for you. Musicians, actors, entertainers, creators, and many more CREAM celebs create 30-60 sec CREAM video messages. You can use CREAM for birthday greetings, anniversary wishes, party invitations, pep talk or whatever.",
+    "duty": "",
     "main_photo": "/cream_intro.png",
     "photos": ["/cream_intro.png", "/cream_web_intro.png", "/lendpinoy.png"],
     "startDate": "2014-01-01",
@@ -10,7 +11,8 @@
   },
   {
     "title": "CREAM Web Application",
-    "description": "cream_web_intro.png",
+    "description": "CREAM fan care service web application",
+    "duty": "",
     "main_photo": "/cream_web.png",
     "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
@@ -18,8 +20,9 @@
     "responsibilities": ["webserver"]
   },
   {
-    "title": "Lendpinoy Micro-lending Mobile Application",
-    "description": "Test project",
+    "title": "Lendpinoy Mobile Application",
+    "description": "lendpinoy is a micro-lending service through mobile application based on artificial intelligence that has been tested and proven successful in other parts of the globe",
+    "duty": "",
     "main_photo": "/lendpinoy.png",
     "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
@@ -29,6 +32,7 @@
   {
     "title": "Electronic Voting System",
     "description": "Test project",
+    "duty": "",
     "main_photo": "/cream_web_intro.png",
     "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
@@ -38,6 +42,7 @@
   {
     "title": "Voter Registration System for South Korea",
     "description": "Test project",
+    "duty": "",
     "main_photo": "/cream_web_intro.png",
     "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
@@ -47,17 +52,19 @@
   {
     "title": "Electronic Conference System from Mongolian National Assemble",
     "description": "Test project",
-    "main_photo": "/cream_web_intro.png",
-    "photos": ["/cream_intro.png"],
+    "duty": "",
+    "main_photo": "/assemble.png",
+    "photos": ["/assemble.png", "/assemble_1.png", "/assemble_2.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
   },
   {
-    "title": "HIVAMS Vessel Asset Management System for Hyundai heavy industries",
-    "description": "Test project",
-    "main_photo": "/cream_web_intro.png",
-    "photos": ["/cream_intro.png", "/cream_web_intro.png"],
+    "title": "HiVAMS Hyundai Intelligent Vessel Asset Management System",
+    "description": "HiVAMS is a ship asset management system designed for efficient management of overall operations including supply, maintenance work, purchase management, stock, and cost management by assigning codes to all equipment and facilities on board.\n•Reduction of paper work from both onboard and ashore •Elimination of filing errors & reduction in paper chasing •Automatic identification of task specialists",
+    "duty": "",
+    "main_photo": "/hivams.png",
+    "photos": ["/hivams_1.png", "/hivams.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]

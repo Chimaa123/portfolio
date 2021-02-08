@@ -5,10 +5,7 @@ import SwipeableViews from "react-swipeable-views";
 import { autoPlay, virtualize } from "react-swipeable-views-utils";
 import { Typography } from "@material-ui/core";
 
-const AutoSwipe = virtualize(SwipeableViews);
-const ReactSwipe = autoPlay(AutoSwipe);
-
-function ProjectDetailItem({ title, description, photos }: ProjectType) {
+function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
   const classes = useStyles();
   const [activeIndex, setIndex] = useState(0);
 
@@ -42,11 +39,26 @@ function ProjectDetailItem({ title, description, photos }: ProjectType) {
           draggable={false}
           onDragStart={preventDragHandler}
           className={classes.photo}
-          src={"images" + photos[i]}
+          src={process.env.PUBLIC_URL + "/images" + photos[i]}
         />
       </div>
     );
   };
+
+  const photosNode = (
+    <div className={classes.paginationContainer}>
+      {photos.map((photo, index) => (
+        <img
+          key={"image" + index}
+          alt="promo"
+          draggable={false}
+          onDragStart={preventDragHandler}
+          className={classes.photo}
+          src={process.env.PUBLIC_URL + "/images" + photos[index]}
+        />
+      ))}
+    </div>
+  );
 
   const pagination = (
     <div className={classes.paginationContainer}>
@@ -60,17 +72,25 @@ function ProjectDetailItem({ title, description, photos }: ProjectType) {
 
   return (
     <div className={classes.root}>
-      <div className={classes.left}>
-        <Typography variant={"h5"} className={classes.title}>
-          {title}
-        </Typography>
-        <Typography variant={"subtitle2"} className={classes.desc}>
-          {description}
-        </Typography>
-      </div>
-      <div className={classes.right}>
-        <ReactSwipe {...swipeOptions} slideRenderer={slideRenderer} />
-        {pagination}
+      <Typography variant={"h3"} className={classes.title}>
+        {title}
+      </Typography>
+      <Typography variant={"subtitle1"} className={classes.desc}>
+        {description}
+      </Typography>
+      <div className={classes.row}>
+        <div className={classes.left}>
+          <Typography variant={"h6"} className={classes.dutyTitle}>
+            My Responsibility
+          </Typography>
+          <Typography variant={"subtitle2"} className={classes.desc}>
+            {duty}
+          </Typography>
+        </div>
+        <div className={classes.right}>
+          {photosNode}
+          {pagination}
+        </div>
       </div>
     </div>
   );
@@ -79,30 +99,47 @@ function ProjectDetailItem({ title, description, photos }: ProjectType) {
 const useStyles = makeStyles({
   root: {
     display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    height: "100vh",
+    minHeight: 400,
+    padding: "5rem",
+  },
+  row: {
+    display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    minHeight: 400,
-    // padding: '5rem'
   },
   left: {
-    width: "60%",
+    width: "30%",
     display: "flex",
     flexDirection: "column",
   },
   right: {
-    width: "40%",
+    width: "70%",
     display: "flex",
     flexDirection: "column",
   },
   photo: {
-    height: "60%",
+    height: "80%",
     width: "40%",
+    margin: 20,
     objectFit: "cover",
+  },
+  dutyTitle: {
+    marginBottom: 20,
+    textWeight: "bolder",
+    color: "white",
+  },
+  desc: {
+    marginBottom: 20,
+    textAlign: "left",
+    color: "white",
   },
   title: {
     fontWeight: "bolder",
     margin: 20,
-    textAlign: "left",
+    textAlign: "center",
     color: "white",
   },
   paginationContainer: {
@@ -118,11 +155,6 @@ const useStyles = makeStyles({
     width: 4,
     height: 2,
     borderRadius: 2,
-  },
-  desc: {
-    marginLeft: 20,
-    textAlign: "left",
-    color: "white",
   },
 });
 

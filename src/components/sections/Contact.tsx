@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { GridList, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import ContactItem from "../atom/ContactItem";
 import contacts from "../../datas/contacts.json";
 
@@ -11,25 +11,32 @@ function Contact() {
       <Typography variant={"h2"} className={classes.title}>
         Contact Me
       </Typography>
-      <GridList cols={2.5} className={classes.row}>
+      <div className={classes.row}>
         {contacts.map((contact) => (
           <ContactItem {...contact} />
         ))}
-      </GridList>
+      </div>
     </div>
   );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: any) => ({
   root: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    padding: "3rem",
   },
   row: {
-    flexWrap: "nowrap",
-    transform: "translateZ(0)",
+    display: "flex",
+    transition: "flexDirection 1s ease",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
+    [theme.breakpoints.up("md")]: {
+      flexDirection: "row",
+    },
   },
   title: {
     textAlign: "center",
@@ -37,6 +44,6 @@ const useStyles = makeStyles({
     fontWeight: "bolder",
     marginBottom: "3rem",
   },
-});
+}));
 
 export default Contact;

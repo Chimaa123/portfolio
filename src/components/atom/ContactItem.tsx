@@ -5,7 +5,12 @@ import { grey32 } from "../../Theme";
 import { IconButton, Typography } from "@material-ui/core";
 import { ArrowForwardIos, LinkedIn, Phone, Email } from "@material-ui/icons";
 
-function ContactItem({ icon: iconProp, title, description }: ContactType) {
+function ContactItem({
+  icon: iconProp,
+  title,
+  description,
+  link,
+}: ContactType) {
   const classes = useStyles();
   const icon = useMemo(() => {
     switch (iconProp) {
@@ -22,7 +27,9 @@ function ContactItem({ icon: iconProp, title, description }: ContactType) {
     return <Email className={classes.icon} />;
   }, [iconProp]);
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    window.open(link, "_blank");
+  };
 
   return (
     <div className={classes.root}>
@@ -33,9 +40,11 @@ function ContactItem({ icon: iconProp, title, description }: ContactType) {
       <Typography variant={"subtitle2"} className={classes.desc}>
         {description}
       </Typography>
-      <IconButton className={classes.icon} onClick={handleClick}>
-        <ArrowForwardIos fontSize={"large"} />
-      </IconButton>
+      {link && (
+        <IconButton className={classes.icon} onClick={handleClick}>
+          <ArrowForwardIos fontSize={"large"} />
+        </IconButton>
+      )}
     </div>
   );
 }

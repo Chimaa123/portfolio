@@ -2,19 +2,17 @@
   {
     "title": "LinkedIn profile",
     "description": "This is my linkedin profile.",
-    "link": "/cream_intro.png",
+    "link": "https://www.linkedin.com/in/chimgee-gombo-b5929b131/",
     "icon": "linkedin"
   },
   {
     "title": "Phone number",
     "description": "(82) 10-5604-1996",
-    "link": "/cream_intro.png",
     "icon": "phone"
   },
   {
     "title": "Email",
-    "description": "Contact trough email.",
-    "link": "/cream_intro.png",
+    "description": "chimaagee@gmail.com",
     "icon": "email"
   }
 ]

@@ -26,7 +26,7 @@ function Intro() {
             <img
               className={classes.img}
               alt={"profile"}
-              src={"images/chimeg_profile_opt.png"}
+              src={process.env.PUBLIC_URL + "/images/chimeg_profile_opt.png"}
             />
           </div>
         </div>

@@ -8,7 +8,10 @@ function ProjectSummaryItem({ title, main_photo }: ProjectType) {
   console.log("photo", main_photo);
   return (
     <div key={title} className={classes.root}>
-      <img src={"images" + main_photo} className={classes.image} />
+      <img
+        src={process.env.PUBLIC_URL + "/images" + main_photo}
+        className={classes.image}
+      />
       <div className={classes.titleBar}>
         <Typography variant={"h5"} className={classes.title}>
           {title}
