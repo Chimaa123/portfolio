@@ -32,19 +32,10 @@ function Intro() {
         </div>
         <div className={classes.right}>
           <Typography variant={"subtitle1"} className={classes.about}>
-            A creative problem solver, flexible and adaptable team player who
-            affects the work atmosphere positively.
+            I specialize in developing front end applications using various
+            technologies such as react native, react and android.
           </Typography>
           <br />
-          <Typography variant={"subtitle1"} className={classes.about}>
-            A creative problem solver, flexible and adaptable team player who
-            affects the work atmosphere positively.
-          </Typography>
-          <br />
-          <Typography variant={"subtitle1"} className={classes.about}>
-            A creative problem solver, flexible and adaptable team player who
-            affects the work atmosphere positively.
-          </Typography>
         </div>
       </div>
     </div>

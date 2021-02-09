@@ -16,7 +16,7 @@ function ProjectsSummary({ projects }: Props) {
   return (
     <div id={"summary"} className={classes.root}>
       <Typography variant={"h2"} className={classes.title}>
-        Projects
+        My Works
       </Typography>
       <GridList ref={scrollRef} className={classes.row}>
         {projects.map((project) => (

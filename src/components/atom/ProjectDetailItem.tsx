@@ -57,7 +57,7 @@ function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
 
   return (
     <div className={classes.root}>
-      <Typography variant={"h3"} className={classes.title}>
+      <Typography variant={"h4"} className={classes.title}>
         {title}
       </Typography>
       <Typography variant={"subtitle1"} className={classes.desc}>
@@ -65,13 +65,12 @@ function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
       </Typography>
       <div className={classes.row}>
         <div className={classes.left}>
-          <Typography variant={"h6"} className={classes.dutyTitle}>
-            My Responsibility
+          <Typography variant={"h5"} className={classes.dutyTitle}>
+            Job responsibilities:
           </Typography>
           {duty.map((d) => (
             <Typography variant={"subtitle2"} className={classes.desc}>
               ● {d}
-              <br />
             </Typography>
           ))}
         </div>
@@ -124,10 +123,11 @@ const useStyles = makeStyles((theme) => ({
   },
   photo: {
     width: "100%",
-    objectFit: "cover",
+    objectFit: "contain",
     maxHeight: 500,
   },
   dutyTitle: {
+    fontWeight: "bold",
     marginBottom: 20,
     textWeight: "bolder",
     color: "white",
@@ -145,6 +145,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paginationContainer: {
     borderRadius: 10,
+    marginTop: 20,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",

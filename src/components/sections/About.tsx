@@ -29,6 +29,10 @@ function About() {
         <Typography variant={"h6"} className={classes.name}>
           Front End Developer
         </Typography>
+        <Typography variant={"subtitle1"} className={classes.name}>
+          I am a creative problem solver, flexible and adaptable team player who
+          affects the work atmosphere positively.
+        </Typography>
       </div>
       <img
         className={classes.img}
@@ -61,6 +65,7 @@ const useStyles = makeStyles({
   name: {
     fontWeight: "bolder",
     paddingLeft: "5rem",
+    paddingRight: "5rem",
     color: greyeb,
   },
   img: {
