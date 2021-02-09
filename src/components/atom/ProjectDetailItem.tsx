@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { ProjectType } from "../../interfaces";
-import { makeStyles } from "@material-ui/core/styles";
 import SwipeableViews from "react-swipeable-views";
-import { autoPlay, virtualize } from "react-swipeable-views-utils";
+import { autoPlay } from "react-swipeable-views-utils";
+import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
+const AutoSwipe = autoPlay(SwipeableViews);
 function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
   const classes = useStyles();
   const [activeIndex, setIndex] = useState(0);
@@ -12,15 +13,15 @@ function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
   const swipeOptions = {
     disableLazyLoading: true,
     autoplay: photos.length > 1,
-    interval: 5000,
-    index: 0,
+    interval: 3000,
+    index: activeIndex,
     springConfig: {
       duration: "1s",
       easeFunction: "cubic-bezier(0.15, 0.3, 0.25, 1)",
       delay: "0s",
     },
     onChangeIndex: (index: number) => {
-      setIndex(0);
+      setIndex(index);
     },
     enableMouseEvents: true,
   };
@@ -29,24 +30,8 @@ function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
     e.preventDefault();
   };
 
-  const slideRenderer = ({ key, index }: { key: any; index: number }) => {
-    const i = Math.abs(index % photos.length);
-    return (
-      <div>
-        <img
-          key={"image" + index}
-          alt="promo"
-          draggable={false}
-          onDragStart={preventDragHandler}
-          className={classes.photo}
-          src={process.env.PUBLIC_URL + "/images" + photos[i]}
-        />
-      </div>
-    );
-  };
-
   const photosNode = (
-    <div className={classes.paginationContainer}>
+    <AutoSwipe {...swipeOptions} className={classes.paginationContainer}>
       {photos.map((photo, index) => (
         <img
           key={"image" + index}
@@ -57,7 +42,7 @@ function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
           src={process.env.PUBLIC_URL + "/images" + photos[index]}
         />
       ))}
-    </div>
+    </AutoSwipe>
   );
 
   const pagination = (
@@ -83,9 +68,12 @@ function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
           <Typography variant={"h6"} className={classes.dutyTitle}>
             My Responsibility
           </Typography>
-          <Typography variant={"subtitle2"} className={classes.desc}>
-            {duty}
-          </Typography>
+          {duty.map((d) => (
+            <Typography variant={"subtitle2"} className={classes.desc}>
+              ● {d}
+              <br />
+            </Typography>
+          ))}
         </div>
         <div className={classes.right}>
           {photosNode}
@@ -101,13 +89,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    height: "100vh",
-    minHeight: 400,
     padding: "5rem",
   },
   row: {
     display: "flex",
     justifyContent: "center",
+    margin: "20px 0px",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
     },
@@ -116,20 +103,29 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   left: {
-    width: "30%",
     display: "flex",
     flexDirection: "column",
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "40%",
+    },
   },
   right: {
-    width: "70%",
     display: "flex",
     flexDirection: "column",
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "60%",
+    },
   },
   photo: {
-    height: "80%",
-    width: "40%",
-    margin: 20,
+    width: "100%",
     objectFit: "cover",
+    maxHeight: 500,
   },
   dutyTitle: {
     marginBottom: 20,
@@ -143,23 +139,29 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontWeight: "bolder",
-    margin: 20,
+    margin: "20px 30px",
     textAlign: "center",
     color: "white",
   },
   paginationContainer: {
+    borderRadius: 10,
     display: "flex",
     flexDirection: "row",
+    justifyContent: "center",
   },
   tab: {
-    width: 2,
-    height: 2,
-    borderRadius: 2,
+    width: 6,
+    height: 6,
+    borderRadius: 6,
+    margin: 6,
+    backgroundColor: "white",
   },
   tabSelected: {
-    width: 4,
-    height: 2,
-    borderRadius: 2,
+    width: 40,
+    height: 6,
+    borderRadius: 6,
+    margin: 6,
+    backgroundColor: "white",
   },
 }));
 

@@ -2,7 +2,7 @@
   {
     "title": "CREAM Mobile Application",
     "description": "With CREAM you can request one-of-a-kind video messages created just for you. Musicians, actors, entertainers, creators, and many more CREAM celebs create 30-60 sec CREAM video messages. You can use CREAM for birthday greetings, anniversary wishes, party invitations, pep talk or whatever.",
-    "duty": "",
+    "duty": ["Hardware control"],
     "main_photo": "/cream_intro.png",
     "photos": ["/cream_intro.png", "/cream_web_intro.png", "/lendpinoy.png"],
     "startDate": "2014-01-01",
@@ -12,7 +12,7 @@
   {
     "title": "CREAM Web Application",
     "description": "CREAM fan care service web application",
-    "duty": "",
+    "duty": ["Hardware control"],
     "main_photo": "/cream_web.png",
     "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
@@ -22,7 +22,7 @@
   {
     "title": "Lendpinoy Mobile Application",
     "description": "lendpinoy is a micro-lending service through mobile application based on artificial intelligence that has been tested and proven successful in other parts of the globe",
-    "duty": "",
+    "duty": ["Hardware control"],
     "main_photo": "/lendpinoy.png",
     "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
@@ -30,9 +30,9 @@
     "responsibilities": ["webserver"]
   },
   {
-    "title": "Electronic Voting System",
+    "title": "Electronic Voting Systems of Congo, Iraq, Russia, Argentina etc",
     "description": "Test project",
-    "duty": "",
+    "duty": ["Hardware control"],
     "main_photo": "/cream_web_intro.png",
     "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
@@ -42,7 +42,7 @@
   {
     "title": "Voter Registration System for South Korea",
     "description": "Test project",
-    "duty": "",
+    "duty": ["Hardware control"],
     "main_photo": "/cream_web_intro.png",
     "photos": ["/cream_intro.png"],
     "startDate": "2014-01-01",
@@ -52,7 +52,7 @@
   {
     "title": "Mongolian National Assembly Electonic Conference System",
     "description": "Mongolian National Assembly's “Electonic Conference System” created with the support of KOICA. This system contains RESTful web server in Spring framework ● Client and operator application in Android\n● Socket server in Java\nEnglish- Full professional proficiency\nKorean - Fluent\nMongolian - Native speaker\n● Serial communication with Bosch conference system",
-    "duty": "",
+    "duty": [""],
     "main_photo": "/assemble_1.png",
     "photos": ["/assemble.png", "/assemble_1.png", "/assemble_2.png"],
     "startDate": "2014-01-01",
@@ -62,7 +62,7 @@
   {
     "title": "HiVAMS Hyundai Intelligent Vessel Asset Management System",
     "description": "HiVAMS is a ship asset management system designed for efficient management of overall operations including supply, maintenance work, purchase management, stock, and cost management by assigning codes to all equipment and facilities on board.\n•Reduction of paper work from both onboard and ashore •Elimination of filing errors & reduction in paper chasing •Automatic identification of task specialists",
-    "duty": "",
+    "duty": ["Development of Client application using android","Development of Android API for Hardware control"],
     "main_photo": "/hivams.png",
     "photos": ["/hivams_1.png", "/hivams.png"],
     "startDate": "2014-01-01",

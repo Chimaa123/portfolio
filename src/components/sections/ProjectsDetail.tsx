@@ -9,9 +9,9 @@ function ProjectsDetail({ projects }: Props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      {/*{projects.map((project) => (*/}
-      {/*  <ProjectDetailItem {...project} />*/}
-      {/*))}*/}
+      {projects.map((project) => (
+        <ProjectDetailItem {...project} />
+      ))}
     </div>
   );
 }
@@ -21,6 +21,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    width: "100vw",
   },
 });
 
