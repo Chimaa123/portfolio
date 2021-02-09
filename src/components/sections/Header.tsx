@@ -17,7 +17,7 @@ const Header = () => {
         <Toolbar className={classes.root}>
           {menus.map((item, index) => (
             <a
-              href={"/#section" + index}
+              href={"/portfolio/#section" + index}
               key={"header" + index}
               className={classes.item}
             >
