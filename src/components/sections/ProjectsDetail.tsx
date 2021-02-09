@@ -9,9 +9,9 @@ function ProjectsDetail({ projects }: Props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      {projects.map((project) => (
-        <ProjectDetailItem {...project} />
-      ))}
+      {/*{projects.map((project) => (*/}
+      {/*  <ProjectDetailItem {...project} />*/}
+      {/*))}*/}
     </div>
   );
 }

@@ -96,7 +96,7 @@ function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
   );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -107,8 +107,13 @@ const useStyles = makeStyles({
   },
   row: {
     display: "flex",
-    flexDirection: "row",
     justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
+    [theme.breakpoints.up("md")]: {
+      flexDirection: "row",
+    },
   },
   left: {
     width: "30%",
@@ -156,6 +161,6 @@ const useStyles = makeStyles({
     height: 2,
     borderRadius: 2,
   },
-});
+}));
 
 export default ProjectDetailItem;

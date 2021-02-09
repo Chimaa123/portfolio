@@ -50,10 +50,10 @@
     "responsibilities": ["webserver"]
   },
   {
-    "title": "Electronic Conference System from Mongolian National Assemble",
-    "description": "Test project",
+    "title": "Mongolian National Assembly Electonic Conference System",
+    "description": "Mongolian National Assembly's “Electonic Conference System” created with the support of KOICA. This system contains RESTful web server in Spring framework ● Client and operator application in Android\n● Socket server in Java\nEnglish- Full professional proficiency\nKorean - Fluent\nMongolian - Native speaker\n● Serial communication with Bosch conference system",
     "duty": "",
-    "main_photo": "/assemble.png",
+    "main_photo": "/assemble_1.png",
     "photos": ["/assemble.png", "/assemble_1.png", "/assemble_2.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",

@@ -5,7 +5,6 @@ import { Typography } from "@material-ui/core";
 
 function ProjectSummaryItem({ title, main_photo }: ProjectType) {
   const classes = useStyles();
-  console.log("photo", main_photo);
   return (
     <div key={title} className={classes.root}>
       <img
@@ -24,12 +23,14 @@ function ProjectSummaryItem({ title, main_photo }: ProjectType) {
 const useStyles = makeStyles({
   root: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    width: 300,
   },
   titleBar: {
-    zIndex: 100,
+    zIndex: 2,
+    width: 300,
     position: "absolute",
   },
   title: {
@@ -39,7 +40,9 @@ const useStyles = makeStyles({
     width: 157,
     height: 277,
     objectFit: "cover",
-    marginLeft: "15rem",
+    margin: "0px 50px 0px 100px",
+    backgroundColor: "black",
+    opacity: 0.6,
     borderRadius: 8,
   },
 });

@@ -51,7 +51,7 @@ function Intro() {
   );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -60,8 +60,13 @@ const useStyles = makeStyles({
   },
   row: {
     display: "flex",
-    flexDirection: "row",
     justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
+    [theme.breakpoints.up("md")]: {
+      flexDirection: "row",
+    },
   },
   about: {
     color: greycb,
@@ -96,6 +101,6 @@ const useStyles = makeStyles({
     borderRadius: BORDER - 16,
     opacity: 0.8,
   },
-});
+}));
 
 export default Intro;

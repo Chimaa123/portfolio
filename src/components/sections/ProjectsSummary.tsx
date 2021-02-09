@@ -3,17 +3,22 @@ import { ProjectType } from "../../interfaces";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectSummaryItem from "../atom/ProjectSummaryItem";
 import { GridList, Typography } from "@material-ui/core";
+import useHorizontalScroll from "../../fns/horizontalScroll";
 interface Props {
   projects: ProjectType[];
 }
+
 function ProjectsSummary({ projects }: Props) {
   const classes = useStyles();
+
+  const scrollRef = useHorizontalScroll();
+
   return (
-    <div className={classes.root}>
+    <div id={"summary"} className={classes.root}>
       <Typography variant={"h2"} className={classes.title}>
         Projects
       </Typography>
-      <GridList className={classes.row}>
+      <GridList ref={scrollRef} className={classes.row}>
         {projects.map((project) => (
           <ProjectSummaryItem {...project} />
         ))}
@@ -22,11 +27,12 @@ function ProjectsSummary({ projects }: Props) {
   );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    position: "relative",
     height: "100vh",
     width: "100vw",
   },
@@ -40,6 +46,6 @@ const useStyles = makeStyles({
     fontWeight: "bolder",
     marginBottom: "3rem",
   },
-});
+}));
 
 export default ProjectsSummary;
