@@ -20,17 +20,17 @@ export default function useHorizontalScroll() {
         if (e.deltaY === 0) return;
         disableScroll();
         const isScrollDown = e.deltaY > 0;
+        const gridTop = el.offsetTop;
+        const scrollY = e.pageY - e.offsetY;
         const isHorizontal = Math.abs(e.deltaY) < Math.abs(e.deltaX);
         if (el) {
-          const gridLeft = el.scrollWidth - el.offsetWidth;
+          const gridRight = el.scrollWidth - el.offsetWidth;
           const scrollX = el.scrollLeft;
-          console.log("onScroll", gridLeft, scrollX);
           if (
             !isHorizontal &&
             ((!isScrollDown && scrollX > 0) ||
-              (isScrollDown && scrollX < gridLeft))
+              (isScrollDown && scrollX < gridRight))
           ) {
-            console.log("enableScroll", el.scrollLeft, e.deltaY);
             el.scrollLeft = el.scrollLeft + e.deltaY;
           } else {
             enableScroll();

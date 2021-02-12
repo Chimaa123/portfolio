@@ -11,6 +11,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import Contact from "./components/sections/Contact";
 import About from "./components/sections/About";
 import { makeStyles } from "@material-ui/core/styles";
+import Flying from "./components/atom/Flying";
 
 function App() {
   const classes = useStyles();
@@ -35,6 +36,7 @@ function App() {
             <Contact />
           </div>
         </div>
+        <Flying />
       </Router>
     </ThemeProvider>
   );

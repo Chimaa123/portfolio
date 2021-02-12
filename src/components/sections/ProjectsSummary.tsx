@@ -13,12 +13,14 @@ function ProjectsSummary({ projects }: Props) {
 
   const scrollRef = useHorizontalScroll();
 
+  const onScroll = (e: any) => {};
+
   return (
     <div id={"summary"} className={classes.root}>
       <Typography variant={"h2"} className={classes.title}>
         My Works
       </Typography>
-      <GridList ref={scrollRef} className={classes.row}>
+      <GridList ref={scrollRef} onScroll={onScroll} className={classes.row}>
         {projects.map((project) => (
           <ProjectSummaryItem {...project} />
         ))}

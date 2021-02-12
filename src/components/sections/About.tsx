@@ -1,10 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
-import Lottie from "react-lottie";
 import { HEADER_HEIGHT } from "./Header";
 import { greyeb } from "../../Theme";
-import lotties from "../../assets/lotties";
 
 function About() {
   const classes = useStyles();
@@ -12,17 +10,6 @@ function About() {
   return (
     <div className={classes.root}>
       <div className={classes.text}>
-        <div className={classes.lottie}>
-          <Lottie
-            height={200}
-            width={200}
-            options={{
-              loop: true,
-              autoplay: true,
-              animationData: lotties.coffee,
-            }}
-          />
-        </div>
         <Typography variant={"h2"} className={classes.name}>
           Gombo Enkhchimeg
         </Typography>
@@ -34,23 +21,24 @@ function About() {
           affects the work atmosphere positively.
         </Typography>
       </div>
-      <img
-        className={classes.img}
-        alt={"profile"}
-        src={process.env.PUBLIC_URL + "/images/coffee_bg.png"}
-      />
     </div>
   );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     height: "calc(100vh - " + HEADER_HEIGHT + "px)",
     width: "100vw",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+    backgroundSize: "cover",
+    [theme.breakpoints.down("md")]: {
+      backgroundImage: `url("${process.env.PUBLIC_URL}/images/coffee_bg_mobile.png")`,
+    },
+    [theme.breakpoints.up("md")]: {
+      backgroundImage: `url("${process.env.PUBLIC_URL}/images/coffee_bg.png")`,
+    },
   },
   lottie: {
     paddingLeft: "5rem",
@@ -58,6 +46,7 @@ const useStyles = makeStyles({
     paddingBottom: 100,
   },
   text: {
+    paddingTop: "20%",
     display: "flex",
     flexDirection: "column",
     width: "100vw",
@@ -75,6 +64,6 @@ const useStyles = makeStyles({
     objectFit: "cover",
     opacity: 0.6,
   },
-});
+}));
 
 export default About;
