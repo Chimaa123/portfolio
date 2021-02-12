@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { ReactComponent as FeaterSvg } from "../../assets/svgs/feather.svg";
 import { ReactComponent as PathSvg } from "../../assets/svgs/path.svg";
+import { ReactComponent as WelcomeSvg } from "../../assets/svgs/welcome.svg";
 
 function Flying() {
   const classes = useStyles();
@@ -49,13 +50,6 @@ function Flying() {
         (document.documentElement.scrollTop + document.body.scrollTop) /
         (document.documentElement.scrollHeight -
           document.documentElement.clientHeight);
-      console.log(
-        "scrolHeihgt",
-        document.documentElement.scrollHeight,
-        document.documentElement.clientHeight,
-        document.documentElement.scrollTop,
-        document.body.scrollTop
-      );
       scrollPercentage =
         window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
       const draw = pathTotalLength * scrollPercentage;
@@ -63,12 +57,6 @@ function Flying() {
         // @ts-ignore
         const pt = path.getPointAtLength(draw);
 
-        console.log(
-          "scrollPercentage",
-          scrollPercentage,
-          pathTotalLength,
-          draw
-        );
         console.log("scrollPercentage pt", pt);
         if (dot) {
           dot.setAttribute("transform", "translate(" + pt.x + "," + pt.y + ")");
@@ -98,6 +86,7 @@ function Flying() {
 
   return (
     <div className={classes.root}>
+      {/*<WelcomeSvg className={classes.welcome} />*/}
       <PathSvg className={classes.svg} />
       <FeaterSvg id={"dot"} className={classes.circle} />
     </div>
@@ -113,9 +102,13 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "flex-start",
   },
-  svg: {
+  welcome: {
     width: "100vw",
-    marginTop: '50%',
+    marginTop: "50%",
+  },
+  svg: {
+    marginTop: "50%",
+    width: "100vw",
     overflow: "visible",
     transform: "rotate(180deg)",
   },
