@@ -37,25 +37,31 @@ function Flying() {
         const pathPoint = path.getPointAtLength(pointOnPath);
         if (dot) {
           // @ts-ignore
-          dot.style.transform = `translate(
-			${pathPosition.left + pathPoint.x}px,
-			${pathPosition.top + pathPoint.y}px
-		)`;
+          //   dot.style.transform = `translate(
+          // 	${pathPosition.left + pathPoint.x}px,
+          // 	${pathPosition.top + pathPoint.y}px
+          // )`;
         }
       }
     }
 
     function draw() {
-      let scrollPercentage =
-        (document.documentElement.scrollTop + document.body.scrollTop) /
-        (document.documentElement.scrollHeight -
-          document.documentElement.clientHeight);
-      scrollPercentage =
-        window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
+      const relativePageOffset = // ΩΩwindow.pageYOffset;
+        -pathPosition.top + (window.pageYOffset + window.innerHeight);
+      const relativePageHeight = //pathPosition.height
+        document.body.offsetHeight - window.innerHeight;
+
+      const scrollPercentage = relativePageOffset / relativePageHeight;
+      console.log(
+        "pageoffset",
+        relativePageOffset,
+        relativePageHeight,
+        scrollPercentage
+      );
       const draw = pathTotalLength * scrollPercentage;
       if (path) {
         // @ts-ignore
-        const pt = path.getPointAtLength(draw);
+        const pt = path.getPointAtLength(pathTotalLength - draw);
 
         console.log("scrollPercentage pt", pt);
         if (dot) {
@@ -94,31 +100,34 @@ function Flying() {
 }
 
 const useStyles = makeStyles({
+  main: {},
   root: {
     position: "absolute",
     display: "flex",
     top: 0,
     flexDirection: "column",
     alignItems: "center",
+    marginTop: "50%",
     justifyContent: "flex-start",
   },
   welcome: {
     width: "100vw",
-    marginTop: "50%",
   },
   svg: {
-    marginTop: "50%",
+    transform: "rotate(180deg)",
     width: "100vw",
     overflow: "visible",
-    transform: "rotate(180deg)",
   },
   circle: {
+    // transform: "rotate(180deg)",
     position: "absolute",
-    zIndex: 100,
+    // zIndex: 100,
     width: 200,
     height: 200,
-    top: "-1rem",
-    left: "-1rem",
+    bottom: 0,
+    left: "50%",
+    // top: "-1rem",
+    // left: "-1rem",
   },
 });
 

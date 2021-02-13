@@ -18,6 +18,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <Flying />
         <div className={classes.root}>
           <Header />
           <div id={"section0"}>
@@ -36,7 +37,6 @@ function App() {
             <Contact />
           </div>
         </div>
-        <Flying />
       </Router>
     </ThemeProvider>
   );
