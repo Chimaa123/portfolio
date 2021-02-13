@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { ProjectType } from "../../interfaces";
 import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
+import { autoPlay, virtualize } from "react-swipeable-views-utils";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
-const AutoSwipe = autoPlay(SwipeableViews);
-function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
+const AutoSwipe = virtualize(SwipeableViews);
+const ReactSwipe = autoPlay(AutoSwipe);
+function ProjectDetailItem({
+  title,
+  subtitle,
+  description,
+  duty,
+  photos,
+}: ProjectType) {
   const classes = useStyles();
   const [activeIndex, setIndex] = useState(0);
 
@@ -30,46 +37,54 @@ function ProjectDetailItem({ title, description, duty, photos }: ProjectType) {
     e.preventDefault();
   };
 
+  const slideRenderer = ({ key, index }: { key: any; index: number }) => {
+    const i = Math.abs(index % photos.length);
+    return (
+      <img
+        key={"image" + index}
+        alt="promo"
+        draggable={false}
+        onDragStart={preventDragHandler}
+        className={classes.photo}
+        src={process.env.PUBLIC_URL + "/images" + photos[i]}
+      />
+    );
+  };
+
   const photosNode = (
-    <AutoSwipe {...swipeOptions} className={classes.paginationContainer}>
-      {photos.map((photo, index) => (
-        <img
-          key={"image" + index}
-          alt="promo"
-          draggable={false}
-          onDragStart={preventDragHandler}
-          className={classes.photo}
-          src={process.env.PUBLIC_URL + "/images" + photos[index]}
-        />
-      ))}
-    </AutoSwipe>
+    <ReactSwipe
+      {...swipeOptions}
+      className={classes.paginationContainer}
+      slideRenderer={slideRenderer}
+    />
   );
 
   const pagination = (
     <div className={classes.paginationContainer}>
-      {photos.map((photo, index) => (
-        <div
-          className={activeIndex === index ? classes.tabSelected : classes.tab}
-        />
-      ))}
+      {photos.map((photo, index) => {
+        const i = Math.abs(activeIndex % photos.length);
+        return (
+          <div className={index === i ? classes.tabSelected : classes.tab} />
+        );
+      })}
     </div>
   );
 
   return (
     <div className={classes.root}>
       <Typography variant={"h4"} className={classes.title}>
-        {title}
-      </Typography>
-      <Typography variant={"subtitle1"} className={classes.desc}>
-        {description}
+        {title + " " + subtitle}
       </Typography>
       <div className={classes.row}>
         <div className={classes.left}>
+          <Typography variant={"body1"} className={classes.desc}>
+            {description}
+          </Typography>
           <Typography variant={"h5"} className={classes.dutyTitle}>
             Job responsibilities:
           </Typography>
           {duty.map((d) => (
-            <Typography variant={"subtitle2"} className={classes.desc}>
+            <Typography variant={"subtitle2"} className={classes.duty}>
               ● {d}
             </Typography>
           ))}
@@ -114,6 +129,7 @@ const useStyles = makeStyles((theme) => ({
   right: {
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
     [theme.breakpoints.down("md")]: {
       width: "100%",
     },
@@ -133,7 +149,11 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   desc: {
-    marginBottom: 20,
+    margin: "20px 0px",
+    textAlign: "left",
+    color: "white",
+  },
+  duty: {
     textAlign: "left",
     color: "white",
   },
@@ -149,6 +169,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
+    alignItems: "center",
   },
   tab: {
     width: 6,

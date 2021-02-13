@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { ProjectType } from "../../interfaces";
 import { makeStyles } from "@material-ui/core/styles";
-import ProjectSummaryItem from "../atom/ProjectSummaryItem";
+import ProjectSummaryItem, { SUMMARY_WIDTH } from "../atom/ProjectSummaryItem";
 import { GridList, Typography } from "@material-ui/core";
 import useHorizontalScroll from "../../fns/horizontalScroll";
 interface Props {
@@ -10,10 +10,15 @@ interface Props {
 
 function ProjectsSummary({ projects }: Props) {
   const classes = useStyles();
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const scrollRef = useHorizontalScroll();
 
-  const onScroll = (e: any) => {};
+  const onScroll = (e: any) => {
+    console.log("onScroll", e.target.scrollLeft, e.target.scrollWidth);
+    const index = Math.ceil(e.target.scrollLeft / SUMMARY_WIDTH);
+    setActiveIndex(index);
+  };
 
   return (
     <div id={"summary"} className={classes.root}>
@@ -21,9 +26,20 @@ function ProjectsSummary({ projects }: Props) {
         My Works
       </Typography>
       <GridList ref={scrollRef} onScroll={onScroll} className={classes.row}>
-        {projects.map((project) => (
-          <ProjectSummaryItem {...project} />
+        <div key={"title1"}>
+          <div className={classes.paddingLeft} />
+        </div>
+        {projects.map((project, index) => (
+          <ProjectSummaryItem
+            {...project}
+            activeIndex={activeIndex}
+            index={index}
+            last={index === projects.length - 1}
+          />
         ))}
+        <div key={"title2"}>
+          <div className={classes.paddingRight} />
+        </div>
       </GridList>
     </div>
   );
@@ -37,6 +53,14 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     height: "100vh",
     width: "100vw",
+  },
+  paddingLeft: {
+    width: "20vw",
+    height: 350,
+  },
+  paddingRight: {
+    width: "60vw",
+    height: 350,
   },
   row: {
     flexWrap: "nowrap",

@@ -1,5 +1,6 @@
 export interface ProjectType {
   title: string;
+  subtitle: string;
   description: string;
   duty: string[];
   main_photo: string;

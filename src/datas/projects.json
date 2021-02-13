@@ -1,16 +1,18 @@
 [
   {
-    "title": "CREAM Mobile Application",
+    "title": "CREAM",
+    "subtitle": "Mobile Application",
     "description": "With CREAM people can request one-of-a-kind video messages created by musicians, actors, entertainers, creators, and many more. Celebrities create 30-60 sec CREAM video messages for their fans. I developed the CREAM android, IOS mobile application using react native and published on the market. Currently, I am responsible for continues integration of this project.",
     "duty": ["In-app purchase", "Apple login", "Kakaotalk login", "Native component to trim videos in android and swift","Video processing such as trimming, compressing and watermark using FFMPEG library"],
     "main_photo": "/cream_intro.png",
-    "photos": ["/cream_intro.png"],
+    "photos": ["/cream_intro.png", "/cream_1.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
   },
   {
-    "title": "CREAM Web Application",
+    "title": "CREAM",
+    "subtitle": "Web Application",
     "description": "I developed the CREAM web application using React.",
     "duty": ["Inicis payment", "Stripe payment"],
     "main_photo": "/cream_web.png",
@@ -20,37 +22,41 @@
     "responsibilities": ["webserver"]
   },
   {
-    "title": "Lendpinoy Mobile Application",
+    "title": "lendpinoy",
+    "subtitle": "Mobile Application",
     "description": "lendpinoy is a micro-lending service through mobile application based on artificial intelligence that has been tested and proven successful in other parts of the globe",
-    "duty": ["User identifying using react native camera", "Showing the nearest merchandises using react-native-map and geolocation"],
+    "duty": ["react native camera", "react-native-map", "geolocation"],
     "main_photo": "/lendpinoy.png",
-    "photos": ["/lendpinoy.png"],
+    "photos": ["/pinoy_1.png","/pinoy_2.png","/pinoy_4.png","/pinoy_5.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
   },
   {
-    "title": "Electronic Voting Systems of Congo, Iraq, Russia, Argentina etc",
+    "title": "Electronic",
+    "subtitle": "Voting Systems",
     "description": "Implementing election system demonstration applications developed specifically for Ecuador, Kenya, Argentina, Congo, Philippines, Russia, Fiji and Iran.",
     "duty": ["Client application in Android","Hardware control like scanner, thermal printer, fingerprint reader, NFC reader", "Database (SQLite)"],
-    "main_photo": "/cream_web_intro.png",
-    "photos": ["/cream_intro.png"],
+    "main_photo": "/congo.png",
+    "photos": ["/congo.png", "/congo_1.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
   },
   {
-    "title": "South Korean Electors Registration System",
+    "title": "South Korean",
+    "subtitle": "Electors Registration System",
     "description": "I was a part of team that developed client application of “South Korean Electors Registration System”.",
     "duty": ["Client application in Android","Hardware control like fingerprint readers, ID card scanner and smartcard readers", "Database (MYSQL)"],
-    "main_photo": "/cream_web_intro.png",
-    "photos": ["/cream_intro.png"],
+    "main_photo": "/koreanelector.png",
+    "photos": ["/koreanelector.png", "/voter_01.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
   },
   {
-    "title": "Mongolian National Assembly Electronic Conference System",
+    "title": "Mongolian National Assembly's",
+    "subtitle": "Conference System",
     "description": "Mongolian National Assembly's “Electronic Conference System” created with the support of KOICA. I got an opportunity to work at this project while studying my MS. I was developing RESTful server at first. But I became responsible for the entire system to solve issues discovered during the test operation in Mongolia and completed project successfully on time. After this project I promoted for full-time job at the company that managed “Mongolian Assembly Conference System” project and worked for 3+ years.",
     "duty": ["Android client applications for conference operators, chairman and congressmen", "Java Socket Server", "RESTful server in Spring", "Database (MYSQL)", "Serial communication with Bosch's conference system"],
     "main_photo": "/assemble_1.png",
@@ -60,7 +66,8 @@
     "responsibilities": ["webserver"]
   },
   {
-    "title": "HiVAMS Hyundai Intelligent Vessel Asset Management System",
+    "title": "HiVAMS Hyundai's",
+    "subtitle": "Vessel Asset Management System",
     "description": "HiVAMS is a ship asset management system designed for efficient management of overall operations including supply, maintenance work, purchase management, stock, and cost management by assigning codes to all equipment and facilities on board. I pioneered in “Computer Science” laboratory at first year of University of Ulsan, which was the first case that freshman has worked in a laboratory in the University of Ulsan. I was given an opportunity to be part of team that developed “Hyundai” heavy industry’s “HiVAMS” vessel asset management system project.",
     "duty": ["Web application using flex framework","Database MySQL"],
     "main_photo": "/hivams.png",
