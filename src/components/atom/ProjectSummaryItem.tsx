@@ -6,7 +6,6 @@ import { Typography } from "@material-ui/core";
 interface Props extends ProjectType {
   activeIndex: number;
   index: number;
-  last: boolean;
 }
 export const SUMMARY_WIDTH = 300;
 function ProjectSummaryItem({
@@ -15,27 +14,32 @@ function ProjectSummaryItem({
   main_photo,
   activeIndex,
   index,
-  last,
 }: Props) {
   const classes = useStyles();
   const truncated = useMemo(() => subtitle.substring(0, 20), []);
+
+  const handlePress = () => {};
+
   return (
-    <div key={title} id={index + "sum"} className={classes.root}>
-      <img
-        src={process.env.PUBLIC_URL + "/images" + main_photo}
-        className={classes.image}
-      />
-      <div
-        className={classes.titleBar}
+    <div key={title} id={index + "sum"} onClick={handlePress}>
+      <a
+        href={"/portfolio/#project" + index}
+        className={classes.root}
         style={index === activeIndex ? { opacity: 1 } : {}}
       >
-        <Typography variant={"h4"} className={classes.title}>
-          {title}
-        </Typography>
-        <Typography variant={"h5"} className={classes.subtitle}>
-          {truncated}
-        </Typography>
-      </div>
+        <img
+          src={process.env.PUBLIC_URL + "/images" + main_photo}
+          className={classes.image}
+        />
+        <div className={classes.titleBar}>
+          <Typography variant={"h4"} className={classes.title}>
+            {title}
+          </Typography>
+          <Typography variant={"h5"} className={classes.subtitle}>
+            {truncated}
+          </Typography>
+        </div>
+      </a>
     </div>
   );
 }
@@ -47,16 +51,16 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     width: 300,
-    height: 350,
+    height: 400,
+    opacity: 0.5,
+    "&:hover": {
+      opacity: 1,
+    },
   },
   titleBar: {
     zIndex: 2,
     width: 300,
     position: "absolute",
-    opacity: 0.5,
-    "&:hover": {
-      opacity: 1,
-    },
   },
   title: {
     width: 200,

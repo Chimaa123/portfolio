@@ -7,13 +7,17 @@ import { Typography } from "@material-ui/core";
 
 const AutoSwipe = virtualize(SwipeableViews);
 const ReactSwipe = autoPlay(AutoSwipe);
+interface Props extends ProjectType {
+  index: number;
+}
 function ProjectDetailItem({
   title,
   subtitle,
   description,
   duty,
   photos,
-}: ProjectType) {
+  index,
+}: Props) {
   const classes = useStyles();
   const [activeIndex, setIndex] = useState(0);
 
@@ -71,11 +75,11 @@ function ProjectDetailItem({
   );
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id={"project" + index}>
       <Typography variant={"h4"} className={classes.title}>
         {title + " " + subtitle}
       </Typography>
-      <div className={classes.row}>
+      <div className={classes.contentContainer}>
         <div className={classes.left}>
           <Typography variant={"body1"} className={classes.desc}>
             {description}
@@ -103,12 +107,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    padding: "5rem",
+    padding: "2rem 5rem",
   },
-  row: {
+  contentContainer: {
     display: "flex",
     justifyContent: "center",
-    margin: "20px 0px",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
     },
@@ -131,9 +134,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     [theme.breakpoints.down("md")]: {
+      padding: "0px 0px",
       width: "100%",
     },
     [theme.breakpoints.up("md")]: {
+      padding: "0px 30px",
       width: "60%",
     },
   },
@@ -141,6 +146,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     objectFit: "contain",
     maxHeight: 500,
+    borderRadius: 8,
   },
   dutyTitle: {
     fontWeight: "bold",
@@ -152,6 +158,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "20px 0px",
     textAlign: "left",
     color: "white",
+    lineHeight: 1,
   },
   duty: {
     textAlign: "left",
@@ -159,12 +166,12 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontWeight: "bolder",
-    margin: "20px 30px",
+    margin: "0px 30px",
     textAlign: "center",
     color: "white",
   },
   paginationContainer: {
-    borderRadius: 10,
+    borderRadius: 8,
     marginTop: 20,
     display: "flex",
     flexDirection: "row",

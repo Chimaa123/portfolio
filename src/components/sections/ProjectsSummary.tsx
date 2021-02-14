@@ -34,7 +34,6 @@ function ProjectsSummary({ projects }: Props) {
             {...project}
             activeIndex={activeIndex}
             index={index}
-            last={index === projects.length - 1}
           />
         ))}
         <div key={"title2"}>
@@ -51,7 +50,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     position: "relative",
-    height: "100vh",
     width: "100vw",
   },
   paddingLeft: {

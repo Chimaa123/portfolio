@@ -5,7 +5,7 @@
     "description": "With CREAM people can request one-of-a-kind video messages created by musicians, actors, entertainers, creators, and many more. Celebrities create 30-60 sec CREAM video messages for their fans. I developed the CREAM android, IOS mobile application using react native and published on the market. Currently, I am responsible for continues integration of this project.",
     "duty": ["In-app purchase", "Apple login", "Kakaotalk login", "Native component to trim videos in android and swift","Video processing such as trimming, compressing and watermark using FFMPEG library"],
     "main_photo": "/cream_intro.png",
-    "photos": ["/cream_intro.png", "/cream_1.png"],
+    "photos": ["/cream_mobile.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
@@ -27,7 +27,7 @@
     "description": "lendpinoy is a micro-lending service through mobile application based on artificial intelligence that has been tested and proven successful in other parts of the globe",
     "duty": ["react native camera", "react-native-map", "geolocation"],
     "main_photo": "/lendpinoy.png",
-    "photos": ["/pinoy_1.png","/pinoy_2.png","/pinoy_4.png","/pinoy_5.png"],
+    "photos": ["/pinoy_1.png","/pinoy_2.png","/pinoy_3.png"],
     "startDate": "2014-01-01",
     "endDate": "2016-01-01",
     "responsibilities": ["webserver"]
