@@ -84,8 +84,8 @@ function ProjectDetailItem({
           <Typography variant={"body1"} className={classes.desc}>
             {description}
           </Typography>
-          <Typography variant={"h5"} className={classes.dutyTitle}>
-            Job responsibilities:
+          <Typography variant={"h6"} className={classes.dutyTitle}>
+            Used technologies:
           </Typography>
           {duty.map((d) => (
             <Typography variant={"subtitle2"} className={classes.duty}>
@@ -150,7 +150,7 @@ const useStyles = makeStyles((theme) => ({
   },
   dutyTitle: {
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 10,
     textWeight: "bolder",
     color: "white",
   },
@@ -166,7 +166,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontWeight: "bolder",
-    margin: "0px 30px",
+    marginBottom: 40,
     textAlign: "center",
     color: "white",
   },

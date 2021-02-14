@@ -35,6 +35,11 @@ function Intro() {
             I specialize in developing front end applications using various
             technologies such as react native, react and android.
           </Typography>
+          <Typography variant={"subtitle1"} className={classes.about}>
+            My responsibilities are handling various technical aspects like
+            coding of modules using the given design specifications, debugging
+            and fixing the defects as well as analysing its root cause.
+          </Typography>
           <br />
         </div>
       </div>

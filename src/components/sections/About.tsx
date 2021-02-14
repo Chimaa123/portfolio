@@ -17,8 +17,8 @@ function About() {
           Front End Developer
         </Typography>
         <Typography variant={"subtitle1"} className={classes.name}>
-          I am a creative problem solver, flexible and adaptable team player who
-          affects the work atmosphere positively.
+          Creative problem solver, flexible and adaptable team player who
+          affects the work atmosphere positively
         </Typography>
       </div>
     </div>
