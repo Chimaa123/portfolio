@@ -10,6 +10,9 @@ import projects from "./datas/projects.json";
 import { ThemeProvider } from "@material-ui/styles";
 import Contact from "./components/sections/Contact";
 import About from "./components/sections/About";
+import { ReactComponent as ThankuSvg } from "./assets/svgs/thanku.svg";
+import { ReactComponent as WelcomeSvg } from "./assets/svgs/welcome.svg";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Flying from "./components/atom/Flying";
 
@@ -35,6 +38,7 @@ function App() {
           </div>
           <div id={"section3"}>
             <Contact />
+            <ThankuSvg />
           </div>
         </div>
       </Router>

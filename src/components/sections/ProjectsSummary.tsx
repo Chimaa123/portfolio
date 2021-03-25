@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     position: "relative",
     width: "100vw",
+    zIndex: 100,
   },
   paddingLeft: {
     width: "20vw",

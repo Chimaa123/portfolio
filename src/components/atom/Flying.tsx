@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { ReactComponent as FeaterSvg } from "../../assets/svgs/feather.svg";
 import { ReactComponent as PathSvg } from "../../assets/svgs/path.svg";
 
 function Flying() {
@@ -20,7 +19,8 @@ function Flying() {
     }
 
     function draw() {
-      const relativePageOffset = window.pageYOffset + window.innerHeight / 2;
+      const relativePageOffset =
+        window.pageYOffset + window.innerHeight - pathPosition.top;
       // -pathPosition.top + (window.pageYOffset + window.innerHeight);
       const relativePageHeight = pathPosition.height;
       // document.body.offsetHeight - window.innerHeight;
@@ -28,19 +28,21 @@ function Flying() {
       const scrollPercentage = relativePageOffset / relativePageHeight;
       const draw = pathTotalLength * scrollPercentage;
       if (path) {
+        path.style.strokeDashoffset = pathTotalLength + draw + "";
+        // @ts-ignore
+        const pt = path.getPointAtLength(pathTotalLength - draw);
         console.log(
           "pageoffset",
-          pathTotalLength,
-          relativePageHeight,
-          path.scrollHeight,
-          path.offsetHeight
+          window.pageYOffset,
+          window.innerHeight,
+          pathPosition.top
         );
-        // @ts-ignore
-        const pt = path.getPointAtLength(pathTotalLength + draw);
         if (dot) {
-          dot.setAttribute("transform", "translate(" + pt.x + "," + pt.y + ")");
+          dot.setAttribute(
+            "transform",
+            "translate(" + (pt.x - 80) + "," + (pt.y - 420) + ")"
+          );
         }
-        path.style.strokeDashoffset = pathTotalLength + draw + "";
         if (scrollPercentage >= 0.99) {
           path.style.strokeDasharray = "none";
         } else {
@@ -57,7 +59,6 @@ function Flying() {
   return (
     <div className={classes.root}>
       <PathSvg className={classes.svg} />
-      <FeaterSvg id="dot" className={classes.circle} />
     </div>
   );
 }
@@ -66,20 +67,14 @@ const useStyles = makeStyles({
   root: {
     position: "absolute",
     display: "flex",
-    top: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    top: "50%",
   },
   svg: {
     zIndex: 10,
     width: "100vw",
     overflow: "visible",
-  },
-  circle: {
-    position: "absolute",
-    zIndex: 100,
-    width: 200,
-    height: 200,
-    left: 0,
-    top: "-1rem",
   },
 });
 
